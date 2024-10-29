@@ -1,5 +1,7 @@
 #!/bin/bash
 
-command_name=$1
+file_name=$1
+command_name=$(echo "$file_name" | sed 's/\.[^.]*$//')
 
-ln -s $(pwd)/$command_name.sh /usr/local/bin/$command_name
+
+ln -s $(pwd)/$file_name /usr/local/bin/$command_name
